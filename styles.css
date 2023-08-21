@@ -1,0 +1,124 @@
+:root{
+    --app-light-aqua: #04BFBF;
+    --app-dark-aqua: #049DBF;
+    --app-light-orange: #F28705;
+    --app-med-orange: #D96704;
+    --app-brown: #A65132;
+    --presentation-radius: 20px;
+}
+
+*, *::before, *::after{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 1rem 0;
+    background: rgba(245, 222, 179, 0.285);
+}
+
+h1{
+    display: block;
+    margin: 0 auto 30px;
+    width: 40%;
+    text-align: center;
+    color: var(--app-brown);
+}
+
+main{  
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: 1.5fr 2.5fr;
+    grid-template-areas: 
+    "presentation info"
+    "references references";
+}
+
+.presentation{
+    grid-area: presentation;
+    position: relative; 
+}
+
+.info{
+    background: white;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    grid-area: info;
+}
+
+.references{
+    grid-area: references;
+}
+
+.presentation h2{
+    padding: 10px;
+    border-radius: var(--presentation-radius);
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
+    background: white;
+    color: var(--app-dark-aqua);
+
+    position: absolute;
+    top: -25px;
+    left: 20px;
+}
+
+.presentation img{
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: var(--presentation-radius) 0 0 var(--presentation-radius);
+    width: 100%;
+    height: 100%;
+}
+
+.presentation dl{
+    width: 100%;
+    padding: .8rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0 0 0 var(--presentation-radius);
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.presentation dl div:first-child,
+.presentation dl div:first-child + div{
+    margin-bottom: .6rem;
+}
+
+.presentation dl dt{
+    color: var(--app-brown);
+    font-weight: bold;
+}
+
+.presentation dl dd{
+    padding-left: 10px;
+}
+
+.presentation dl dd::before{
+    content: "➡️";
+}
+
+.info h3{
+    color: var(--app-med-orange);
+}
+
+.info ul, .info ol{
+    padding-left: 2rem;
+}
+
+.info h3, .info h3 + ul, .info h3 + ol{
+    margin-bottom: 1rem;
+}
+
+.info h3 + ol:last-child{
+    margin-bottom: none;
+}
+
+.references{
+    text-align: center;
+}
